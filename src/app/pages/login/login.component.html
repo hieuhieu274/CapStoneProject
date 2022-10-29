@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="form mt-5">
+    <h4>Đăng nhập</h4>
+    <input type="text" #username placeholder="Tài khoản" />
+    <input type="text" #password placeholder="Mật khẩu" />
+
+    <div class="remember" >
+      <input type="checkbox" (change)="checkCheckBoxvalue($event)" name="" id="" />
+      <span>Nhớ tài khoản</span>
+    </div>
+    <button (click)="login(username.value, password.value)" class="login-btn">Đăng nhập</button>
+    <div class="footer-login">
+      <span>Không phải thành viên? </span>
+      <a href="/register"><button class="btn-register">Đăng kí</button></a>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+

@@ -1,0 +1,38 @@
+nav {
+  .logo {
+    background-image: url("../../../../assets/logo/ELC-logo.png");
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    border-radius: 4px;
+  }
+
+  form{
+    margin-left: 50px;
+  }
+
+  .nav-link{
+    color: white;
+  }
+  .navbar-right{
+    position: absolute;
+    right: 30px;
+  }
+  .login{
+    margin-right: 10px;
+  }
+  .nav-link:hover{
+    color: white;
+    cursor: pointer;
+  }
+}
+.sub{
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  button{
+    margin-right: 20px;
+  }
+  padding-bottom: 10px;
+}
+
