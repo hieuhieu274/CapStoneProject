@@ -8,6 +8,7 @@ import { StudentComponent } from './student/student.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { AuthGuard } from './pages/guard/auth.guard';
 import { RegisterComponent } from './pages/register/register.component';
+import { QuizComponent } from './pages/component/quiz/quiz.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'dashboard',canActivate:[AuthGuard] ,component: DashboardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent},
+  { path: 'quiz', component: QuizComponent},
   { path: '**', redirectTo:'login', pathMatch:'full' }
 ];
 

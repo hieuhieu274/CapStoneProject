@@ -18,8 +18,8 @@ import { StudentComponent } from './student/student.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { HeaderComponent } from './pages/component/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ErrorDialogComponent } from './pages/component/header/error-dialog/error-dialog.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { QuizComponent } from './pages/component/quiz/quiz.component';
 
 
 @NgModule({
@@ -31,8 +31,8 @@ import { RegisterComponent } from './pages/register/register.component';
     TeacherComponent,
     StudentComponent,
     HeaderComponent,
-    ErrorDialogComponent,
     RegisterComponent,
+    QuizComponent,
   ],
   imports: [
     FormsModule,
