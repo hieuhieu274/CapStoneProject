@@ -1,0 +1,114 @@
+.container {
+  padding: 20px;
+
+  h1 {
+    text-align: center;
+  }
+  .content {
+    display: flex;
+
+    .left {
+      height: auto;
+      text-align: center;
+      line-height: 50px;
+      width: 70%;
+      text-align: start;
+      .QA {
+        ul {
+          margin-left: 10px;
+          list-style: none;
+          li {
+            background-color: rgb(130, 173, 188);
+            border-radius: 5px;
+            margin-top: 5px;
+            input{
+              margin-left: 20px;
+            }
+          }
+          li:hover{
+            background-color: rgb(184, 226, 184);
+            cursor: pointer;
+          }
+        }
+        background-color: pink;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .button {
+        display: flex;
+        justify-content: space-between;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 25%;
+        margin-top: 9px;
+        background-color: gray;
+        border-radius: 5px;
+        .correct{
+          background-color: green;
+        }
+        .uncorrect{
+          background-color: red;
+        }
+        button {
+          border: none;
+          border-radius: 10px;
+          padding: 0px 20px;
+          .btn-success:disabled{
+            background-color: gray;
+          }
+        }
+      }
+      h6 {
+        background-color: gray;
+        width: auto;
+        padding: 20px;
+        border-radius: 5px;
+        color: white;
+      }
+    }
+    .right {
+      height: auto;
+      text-align: center;
+      line-height: 50px;
+      width: 27%;
+      .time {
+        color: rgb(16, 16, 16);
+        background-color: gray;
+        padding: 4px;
+        border-radius: 5px;
+        margin-left: 10px;
+      }
+      p{
+        margin: 0px;
+        color: white;
+      }
+      .questions {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 24px;
+        .question {
+          height: 50px;
+          width: 50px;
+          margin-left: 10px;
+          margin-top: 5px;
+          border: 2px solid rgb(87, 184, 211);
+          border-radius: 10px;
+          font-weight: bold;
+        }
+        .error{
+          background-color: rgb(193, 233, 229);
+        }
+        .success{
+          background-color:  #91e1aa;;
+          height: 50px;
+          width: 50px;
+          margin-left: 10px;
+          margin-top: 5px;
+          border: 3px solid #42d167;
+          border-radius: 10px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

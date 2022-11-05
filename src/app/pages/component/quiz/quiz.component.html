@@ -1,0 +1,44 @@
+<div class="container">
+  <h1>Bài kiểm tra</h1>
+  <div class="content">
+    <div class="left">
+      <h6>Chọn câu trả lời đúng:</h6>
+      <div class="QA">
+        <p>Câu hỏi : {{questions[indexQuestion]?.question}}</p>
+        <ul>
+          <li>
+            <input type="radio" name="question" value={{questions[indexQuestion]?.answerA}} #A id="A">
+           <strong> A - </strong> {{questions[indexQuestion]?.answerA}}
+          </li>
+          <li>
+            <input type="radio" name="question"  value={{questions[indexQuestion]?.answerB}} #B id="B">
+            <strong> B - </strong> {{questions[indexQuestion]?.answerB}}
+          </li>
+          <li>
+            <input type="radio" name="question"  value={{questions[indexQuestion]?.answerC}} #C id="C">
+            <strong> C- </strong> {{questions[indexQuestion]?.answerC}}
+          </li>
+          <li>
+            <input type="radio" name="question"  value={{questions[indexQuestion]?.answerD}} #D id="D">
+            <strong> D - </strong> {{questions[indexQuestion]?.answerD}}
+          </li>
+        </ul>
+
+      </div>
+      <div class="button">
+        <button class="btn-danger" (click)="back()">Trở lại</button>
+        <button class="btn-success" [disabled]="nextstatus" (click)="next(indexQuestion, A, B, C, D)">Tiếp theo</button>
+        <button class="btn-primary">Nộp</button>
+      </div>
+    </div>
+    <div class="right">
+      <div class="time">
+          <p>{{time}}</p>
+      </div>
+      <div class="questions" >
+
+        <div class="question" [ngClass]="item?.status_choose ? 'success' : 'error'" *ngFor="let item of questions; var let i = index">{{i + 1}}</div>
+      </div>
+    </div>
+  </div>
+</div>
