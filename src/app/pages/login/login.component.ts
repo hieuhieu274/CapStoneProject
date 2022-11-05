@@ -19,11 +19,13 @@ export class LoginComponent implements OnInit, OnDestroy {
   username?: string;
   check: boolean = false;
   destroy$ = new Subject();
+  submit !: boolean
   constructor(private loginService: LoginService, private router: Router) {
     const access_token = localStorage.getItem('access_token');
     if (access_token) {
       this.router.navigate(['/home']);
     }
+    this.submit = false
   }
 
   ngOnInit(): void {
@@ -31,25 +33,31 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.email = 'demo@gmail.com';
   }
   login(username?: string, password?: string) {
+    this.submit = true  
     if (username && password) {
       this.loginService
         .login(username, password)
         .pipe(takeUntil(this.destroy$))
         .subscribe(
           (response) => {
-            if (response.status === 200) {
+            if (response.access_token && response.refresh_token) {
               localStorage.setItem('access_token', `${response.access_token}`);
               localStorage.setItem(
                 'refresh_token',
                 `${response.refresh_token}`
               );
               this.router.navigate(['home']);
+              location.reload();
+              this.submit = false
             } else {
               alert(`Username or password is wrong`);
+              this.submit = false
             }
           },
           (error) => {
-            alert(`Error:  ${error.statusText}`);
+            alert(`Error API: ${error?.statusText} or Username || password is wrong `)
+            location.reload();
+            this.submit = false
           }
         );
     } else {

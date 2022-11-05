@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-secondary p-2">
-  <a class="navbar-brand logo" href="home"></a>
+  <a class="navbar-brand logo" (click)="routerPage('home')"></a>
   <button
     class="navbar-toggler"
     type="button"
@@ -31,27 +31,27 @@
       </li>
     </ul>
     <div class="navbar-right">
-      <button type="button" class="btn btn-primary login" *ngIf="!login">
+      <button type="button" class="btn btn-primary login" (click)="routerPage('login')" *ngIf="!login">
         Đăng nhập
       </button>
-      <button type="button" class="btn btn-primary" *ngIf="!login">
+      <button type="button" class="btn btn-primary" (click)="routerPage('register')" *ngIf="!login">
         Đăng ký
       </button>
-      <button type="button" class="btn btn-primary" *ngIf="login">
+      <button type="button" class="btn btn-primary" (click)="logout()" *ngIf="login">
         Đăng xuất
       </button>
     </div>
   </div>
 </nav>
 
-<div class="sub navbar-light bg-secondary" *ngIf="role">
+<div class="sub navbar-light bg-secondary" *ngIf="role && login">
   <button type="button" class="btn btn-primary">About Us</button>
   <button type="button" class="btn btn-primary">Teacher Team</button>
   <button type="button" class="btn btn-primary">Course</button>
   <button type="button" class="btn btn-primary">Class Schedule</button>
 </div>
 
-<div class="sub navbar-light bg-secondary" *ngIf="!role">
+<div class="sub navbar-light bg-secondary" *ngIf="!role && login">
   <button type="button" class="btn btn-primary">
     <i class="bx bx-grid-alt"></i> <span class="link_name">Dashboard</span>
   </button>

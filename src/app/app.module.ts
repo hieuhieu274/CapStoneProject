@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AgGridModule } from 'ag-grid-angular';
 import { CellCustomComponent } from './cell-custom/cell-custom.component';
 import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
-// import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
@@ -37,7 +37,8 @@ import { RegisterComponent } from './pages/register/register.component';
   imports: [
     FormsModule,
     ReactiveFormsModule,
-    BrowserModule,
+    // BrowserModule,
+    CommonModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
