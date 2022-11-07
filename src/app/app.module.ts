@@ -20,6 +20,7 @@ import { HeaderComponent } from './pages/component/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/register/register.component';
 import { QuizComponent } from './pages/component/quiz/quiz.component';
+import { FooterComponent } from './pages/component/footer/footer.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { QuizComponent } from './pages/component/quiz/quiz.component';
     HeaderComponent,
     RegisterComponent,
     QuizComponent,
+    FooterComponent,
   ],
   imports: [
     FormsModule,

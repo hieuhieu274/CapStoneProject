@@ -13,10 +13,19 @@ export class QuizComponent implements OnInit {
   public lenQuestion?: number;
   public listPoint: any = [];
   public nextstatus = false;
-  public time :any
+  public time: any
   constructor(private quizService: QuizService) {
     this.indexQuestion = 0;
-    this.questions = this.quizService.getQuiz();
+    this.quizService.getQuiz().subscribe((res) => {
+      if (res) {
+        console.log(res);
+        this.questions = res
+      }
+      else {
+        alert('error')
+      }
+
+    })
   }
 
   ngOnInit(): void {
@@ -76,19 +85,19 @@ export class QuizComponent implements OnInit {
     }
   }
 
-  startTime():any {
+  startTime(): any {
     let h = 0; // Giờ
-    let m = 2; // Phút
+    let m = 30; // Phút
     let s = 59; // Giây
-    setInterval(()=>{
+    setInterval(() => {
       s -= 1
-      if(s<0){
-        m-=1
+      if (s < 0) {
+        m -= 1
         s = 59
-        if(m<0){
-          h-=1
-          m=59
-          if(h<0){
+        if (m < 0) {
+          h -= 1
+          m = 59
+          if (h < 0) {
             alert('Hết giờ')
             window.location.reload()
           }
@@ -97,7 +106,7 @@ export class QuizComponent implements OnInit {
       this.time = `${h} giờ ${m} phút ${s} giây`
 
 
-    },1000)
+    }, 1000)
 
   }
 }
